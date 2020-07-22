@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_21_235013) do
+ActiveRecord::Schema.define(version: 2020_07_22_010001) do
+
+  create_table "likes", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.integer "tweeet_id"
+  end
 
   create_table "tweeets", force: :cascade do |t|
     t.text "tweeet"
